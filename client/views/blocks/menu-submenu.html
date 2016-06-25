@@ -1,0 +1,8 @@
+<ul class="nav-sub">
+  <li ui-sref-active="active" ng-repeat="item in submenu" on-repeat-done="done">
+    <a ui-sref="{{item.state}}">
+      <span class="nav-text">{{item.name}}</span>
+    </a>
+  </li>
+</ul>
+

@@ -1,0 +1,141 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
+      <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
+      <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css" />
+      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+      <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+      <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+      <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+      <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+      <link rel="stylesheet" href="bower_components/bootstrap-additions/dist/bootstrap-additions.css" />
+      <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+      <link rel="stylesheet" href="bower_components/dropzone/dist/min/dropzone.min.css" />
+      <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+      <link rel="stylesheet" href="bower_components/footable/css/footable.core.css" />
+      <link rel="stylesheet" href="bower_components/ngImgCrop/compile/minified/ng-img-crop.css" />
+      <link rel="stylesheet" href="bower_components/select2-bootstrap-theme/dist/select2-bootstrap.css" />
+      <link rel="stylesheet" href="bower_components/select2-bootstrap-theme/dist/select2-bootstrap.min.css" />
+      <link rel="stylesheet" href="bower_components/waves/dist/waves.min.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+      <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="meanFullstackApp">
+    <!--[if lt IE 7]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <navbar></navbar>
+    <div ui-view=""></div>
+    <footer></footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/PACE/pace.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+      <script src="bower_components/echarts/build/dist/echarts.js"></script>
+      <script src="bower_components/angular-echarts/dist/angular-echarts.min.js"></script>
+      <script src="bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+      <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+      <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+      <script src="bower_components/summernote/dist/summernote.js"></script>
+      <script src="bower_components/angular-summernote/dist/angular-summernote.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+      <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+      <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+      <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+      <script src="bower_components/angular-ui-map/ui-map.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-ui-select/dist/select.js"></script>
+      <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+      <script src="bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+      <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+      <script src="bower_components/dropzone/dist/min/dropzone.min.js"></script>
+      <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+      <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="bower_components/flot/jquery.flot.js"></script>
+      <script src="bower_components/flot-spline/js/jquery.flot.spline.js"></script>
+      <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.js"></script>
+      <script src="bower_components/footable/js/footable.js"></script>
+      <script src="bower_components/handlebars/handlebars.js"></script>
+      <script src="bower_components/html.sortable/dist/html.sortable.js"></script>
+      <script src="bower_components/jQuery-Storage-API/jquery.storageapi.js"></script>
+      <script src="bower_components/jquery-pjax/jquery.pjax.js"></script>
+      <script src="bower_components/requirejs/require.js"></script>
+      <script src="bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js"></script>
+      <script src="bower_components/ngImgCrop/compile/minified/ng-img-crop.js"></script>
+      <script src="bower_components/ngstorage/ngStorage.js"></script>
+      <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+      <script src="bower_components/parsleyjs/dist/parsley.js"></script>
+      <script src="bower_components/screenfull/dist/screenfull.js"></script>
+      <script src="bower_components/select2/dist/js/select2.js"></script>
+      <script src="bower_components/tether/dist/js/tether.js"></script>
+      <script src="bower_components/underscore/underscore.js"></script>
+      <script src="bower_components/venturocket-angular-slider/build/angular-slider.js"></script>
+      <script src="bower_components/waves/dist/waves.min.js"></script>
+      <!-- endbower -->
+      <script src="socket.io-client/socket.io.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,client}) app/app.js -->
+      <script src="app/app.js"></script>
+      <!-- injector:js -->
+      <script src="components/util/util.module.js"></script>
+      <script src="app/main/main.controller.js"></script>
+      <script src="app/main/main.js"></script>
+      <script src="components/footer/footer.directive.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="components/navbar/navbar.directive.js"></script>
+      <script src="components/socket/socket.service.js"></script>
+      <script src="components/util/util.service.js"></script>
+      <script src="app/app.constant.js"></script>
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </body>
+</html>

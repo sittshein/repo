@@ -1,0 +1,147 @@
+<div class="p-a white lt box-shadow">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="m-b-0 _300">Welcome to {{app.name}}</h4>
+      <small class="text-muted">Bootstrap <strong>4</strong> Web App Kit with AngularJS</small>
+    </div>
+    <div class="col-sm-6 text-sm-right">
+      <div class="m-y-sm">
+        <span class="m-r-sm">Start manage:</span>
+        <div class="btn-group dropdown">
+          <button class="btn white btn-sm ">Projects</button>
+          <button class="btn white btn-sm dropdown-toggle" data-toggle="dropdown"></button>
+          <div class="dropdown-menu dropdown-menu-scale pull-right">
+            <a class="dropdown-item" href>Members</a>
+            <a class="dropdown-item" href>Tasks</a>
+            <a class="dropdown-item" href>Inbox</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="padding">
+	<div class="row">
+		<div class="col-sm-12">
+			<!-- large modal -->
+      <div id="m-md" class="modal" data-backdrop="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Large modal</h5>
+            </div>
+            <div class="modal-body text-center p-lg">
+              <p>Are you sure to execute this action?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn dark-white p-x-md" data-dismiss="modal">No</button>
+              <button type="button" class="btn danger p-x-md" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+      </div>
+      <!-- / .modal -->
+      Modal
+      <button class="btn white" data-toggle="modal" data-target="#m-md">Large size</button>
+      <button class="btn btn-icon" data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/tpl.modal.content.html" bs-modal="modal">
+        <i class="fa fa-plus"></i>
+      </button>
+      <!-- You can use a custom html template with the `data-template` attr -->
+      <button type="button" class="btn btn-sm white" data-template-url="../views/blocks/tpl.aside.html" data-placement="right" data-animation="am-slide-right aside-open-backdrop" bs-aside="aside" data-container="body">Custom aside
+        <br />
+        <small>(using data-template)</small>
+      </button>
+		</div>
+	</div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p class="m-a-0 m-b">Nestable with handle</p>
+      <div ui-jp="nestable" class="dd">
+        <ol class="dd-list dd-list-handle">
+          <li class="dd-item" data-id="13">
+              <div class="dd-content box">
+              	<div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div> Item 13
+						      <a data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/tpl.modal.content.html" bs-modal="modal">
+						        <span class="pull-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+						      </a>
+              </div>
+          </li>
+          <li class="dd-item" data-id="14">
+              <div class="dd-content box"><div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div> Item 14</div>
+          </li>
+          <li class="dd-item" data-id="15">
+              <div class="dd-content box"><div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>Item 15</div>
+              <ol class="dd-list">
+                  <li class="dd-item" data-id="16">
+                      <div class="dd-content box"><div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>Item 16</div>
+                  </li>
+                  <li class="dd-item" data-id="17">
+                      <div class="dd-content box"><div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>Item 17</div>
+                  </li>
+                  <li class="dd-item" data-id="18">
+                      <div class="dd-content box"><div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>Item 18</div>
+                  </li>
+              </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <p class="m-a-0 m-b">Nestable</p>
+      <div ui-jp="nestable" class="dd">
+        <ol class="dd-list">
+          <li class="dd-item" data-id="1" style="position: relative:">
+          	<div class="pull-right inline" style="position:absolute; z-index: 1; right:0;">
+		          <button type="button" class="btn btn-sm white" data-template-url="../views/blocks/tpl.aside.html" data-placement="right" data-animation="am-slide-right aside-open-backdrop" bs-aside="aside" data-container="body">Custom aside
+						        <br />
+						        <small>(using data-template)</small>
+						      </button>
+				    </div>
+            <div class="dd-handle box">Item 1
+              <button class="btn btn-icon white" data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/tpl.modal.content.html" bs-modal="modal">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </li>
+          <li class="dd-item" data-id="2">
+            <div class="dd-handle box">Item 2</div>
+            <ol class="dd-list">
+              <li class="dd-item" data-id="3">
+                <div class="dd-handle box">Item 3</div>
+              </li>
+              <li class="dd-item" data-id="4">
+                <div class="dd-handle box">Item 4</div>
+              </li>
+              <li class="dd-item" data-id="5">
+                <div class="dd-handle box">Item 5</div>
+                <ol class="dd-list">
+                  <li class="dd-item" data-id="6">
+                    <div class="dd-handle box">Item 6</div>
+                  </li>
+                  <li class="dd-item" data-id="7">
+                    <div class="dd-handle box">Item 7</div>
+                  </li>
+                  <li class="dd-item" data-id="8">
+                    <div class="dd-handle box">Item 8</div>
+                  </li>
+                </ol>
+              </li>
+              <li class="dd-item" data-id="9">
+                <div class="dd-handle box">Item 9</div>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+	<!-- start echart -->
+	<echart></echart>
+	<!-- end echart -->
+
+</div>

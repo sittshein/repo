@@ -1,0 +1,17 @@
+<div>
+  <li ng-repeat="parent in parents" on-repeat-done="done">  
+
+    <a ui-sref="{{parent.state}}">
+      <span ng-show="(!!parent.collapsed)" class="nav-caret">
+        <i class="fa fa-caret-down"></i>
+      </span>
+      <span class="nav-icon">
+        <i class="material-icons">{{parent.icon}}</i>
+      </span>
+      <span class="nav-text">{{parent.name}}</span>
+    </a>
+    
+    <ui-menu-submenu data="parent" submenu="childs"></ui-menu-submenu>
+
+  </li>
+</div>
