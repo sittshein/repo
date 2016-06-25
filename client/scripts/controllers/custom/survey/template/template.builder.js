@@ -4,7 +4,8 @@
     'use strict';
     angular
       .module('app')
-      .controller('XeditableCtrl', XeditableCtrl );
+      .controller('XeditableCtrl', XeditableCtrl )
+      .controller('ModalCtrl', ModalCtrl);
       
       XeditableCtrl.$inject = ['$scope', '$filter', '$http', 'editableOptions', 'editableThemes'];
 
@@ -26,14 +27,14 @@
               questioins: [
                 {
                   id: '1',
-                  type : 'choice',
+                  type : 'Choice',
                   allowMultiple: false,
                   question : 'How did you find us?',
                   values: ['facebook', 'twitter', 'EDM', 'Television', 'Word of Mouth', 'Others']
                 },
                 {
                   id: '2',
-                  type : 'choice',
+                  type : 'Choice',
                   allowMultiple: true,
                   question : 'What do you love about us?',
                   values: ['Hospility', 'Friendly', 'Impression', 'Decoration', 'All']
@@ -136,6 +137,22 @@
           };
           vm.users.push(vm.inserted);
         };
-
       }
+
+    ModalCtrl.$inject = ['$scope', '$modal'];
+    function ModalCtrl($scope, $modal) {
+      console.log($scope.question);
+      
+      // $scope.modal = $modal;//{title: 'Title', content: 'Hello Modal<br />This is a multiline message!'};
+
+      // Controller usage example
+      //
+      // var myModal = $modal({title: 'Title', content: 'Hello Modal<br />This is a multiline message!', show: false});
+      // $scope.showModal = function() {
+      //   myModal.$promise.then(myModal.show);
+      // };
+      // $scope.hideModal = function() {
+      //   myModal.$promise.then(myModal.hide);
+      // };
+    }
 })();

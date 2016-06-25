@@ -61,12 +61,7 @@
                 '' : {
                   templateUrl: '../views/custom/survey/template/template.builder.html',
                   controller: 'XeditableCtrl',
-                  resolve: load(['xeditable','scripts/controllers/custom/survey/template/template.builder.js','mgcrea.ngStrap','scripts/controllers/angularstrap.js'])
-                },
-                'templatelist@app.survey.template.builder' : {
-                  templateUrl: '../views/custom/survey/template/template.templatelist.html',
-                  controller: 'TableCtrl',
-                  resolve: load(['smart-table', 'scripts/controllers/table.js', 'mgcrea.ngStrap'])
+                  resolve: load(['xeditable','mgcrea.ngStrap','scripts/controllers/angularstrap.js','scripts/controllers/custom/survey/template/template.builder.js'])
                 }
               },
               data : { title: 'Survey Template Builder' }

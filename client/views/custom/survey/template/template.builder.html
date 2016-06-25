@@ -33,7 +33,7 @@
               <div class="dd-content box">
                 <div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>
                   <span editable-text="question.question">{{question.question}}</span>
-                  <a data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/survey.modal.content.html" bs-modal="modal">
+                  <a ng-controller="ModalCtrl" data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/survey.modal.content.html" bs-modal="{{question.id}}" ng-modal="question" >
                     <span class="pull-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</span>
                   </a>
               </div>
