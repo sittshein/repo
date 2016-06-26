@@ -8,38 +8,41 @@
       <div class="m-y-sm p-a">
         <div class="inline pull-right" style="position: relative;">
           <a class="nav-link" href data-toggle="dropdown">
-          <i class="fa fa-fw fa-plus text-muted"></i> <span>Elements</span></a>
-          <div class="dropdown-menu dropdown-menu-scale">
-            <a class="dropdown-item"><span>Choice</span></a>
-            <a class="dropdown-item"><span>Weight</span></a>
-            <a class="dropdown-item"><span>Textbox</span></a>
-            <a class="dropdown-item"><span>Staff Name</span></a>
+            <i class="fa fa-fw fa-plus text-muted"></i> <span>Elements</span></a>
+            <div class="dropdown-menu dropdown-menu-scale">
+              <a class="dropdown-item"><span>Choice</span></a>
+              <a class="dropdown-item"><span>Weight</span></a>
+              <a class="dropdown-item"><span>Textbox</span></a>
+              <a class="dropdown-item"><span>Staff Name</span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="padding">
-  <div class="box" ng-repeat="topic in surveyTemplate.topics">
-    <div class="box-header">
-      <h2><span editable-text="topic.topic">{{ topic.topic || 'Empty Topic' }}</span></h2>
-    </div>
-      <div ui-jp="nestable" class="dd p-a" >
+  <div class="padding">
+    <div class="box" ng-repeat="topic in surveyTemplate.topics">
+      <div class="box-header">
+        <h2><span editable-text="topic.topic">{{ topic.topic || 'Empty Topic' }}</span></h2>
+      </div>
+      <div ui-jp="nestable" class="dd p-a" style="max-width: none;">
         <ol class="dd-list dd-list-handle">
-          <li class="dd-item" data-id="{{question.id}}" ng-repeat="question in topic.questioins">
-              <div class="dd-content box">
-                <div class="dd-handle"><i class="fa fa-reorder text-muted"></i></div>
-                  <span editable-text="question.question">{{question.question}}</span>
-                  <a ng-controller="ModalCtrl" data-animation="am-fade-and-slide-top" data-content-template="../views/blocks/survey.modal.content.html" bs-modal="{{question.id}}" ng-modal="question" >
-                    <span class="pull-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</span>
-                  </a>
+          <li class="dd-item" data-id="{{question.id}}" ng-repeat="question in topic.questions">
+              <div class="dd-handle box" ><i class="fa fa-reorder text-muted"></i></div>
+              
+              <div class="dd-content" style="position: absolute; top: 0; margin-left: 40px; padding-left: 0; width: 100%; padding-right: 100px;">
+                <span editable-text="question.question" style="display: inline-block; overflow: hidden; height: 22px;">{{question.question}}</span>
+              </div>
+              <div style=" position: absolute; top: 0; right: 0; padding-top: 10px; padding-right: 10px;">
+              <a ng-controller="QuestionCtrl" data-animation="am-fade-and-slide-top" data-template-url="../views/blocks/survey.modal.content.html" bs-modal="{{question.id}}" ng-modal="question" ng-modal="topic" >
+                  <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</span>
+                </a>
               </div>
           </li>
         </ol>
       </div>
+    </div>
   </div>
-</div>
 
