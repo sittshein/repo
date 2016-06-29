@@ -30,6 +30,7 @@
         "angular-ui-select/dist/**",
         "angular-ui-utils/ui-utils.js",
         "angular-ui-calendar/src/calendar.js",
+        "angular-ui-tree/dist/**",
         "angular-xeditable/dist/**",
         "jquery.easy-pie-chart/dist/angular.easypiechart.js",
         "ngImgCrop/compile/minified/**",
@@ -39,8 +40,8 @@
         "angular-echarts/dist/**",
         "html.sortable/dist/html.sortable.angular.min.js"
       ],
-      "dest": "libs/angular",
-      "cwd": "bower_components",
+      "dest": "client/libs/angular",
+      "cwd": "client/bower_components",
       "expand": true
     },
     {
@@ -51,8 +52,8 @@
         "underscore/underscore-min.js",
         "dropzone/dist/min/**"
       ],
-      "dest": "libs/js",
-      "cwd": "bower_components",
+      "dest": "client/libs/js",
+      "cwd": "client/bower_components",
       "expand": true
     },
     {
@@ -87,8 +88,8 @@
         "jquery-pjax/jquery.pjax.js",
         "twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"
       ],
-      "dest": "libs/jquery",
-      "cwd": "bower_components",
+      "dest": "client/libs/jquery",
+      "cwd": "client/bower_components",
       "expand": true
     },
     {
@@ -102,8 +103,8 @@
         "bootstrap/dist/css/**",
         "bootstrap/scss/**"
       ],
-      "dest": "assets",
-      "cwd": "bower_components",
+      "dest": "client/assets",
+      "cwd": "client/bower_components",
       "expand": true
     }
   ],
@@ -111,7 +112,7 @@
     "json3": "~3.3.1",
     "es5-shim": "~3.0.1",
     "angular-cookies": "~1.5.0",
-    "font-awesome": ">=4.1.0",
+    "font-awesome": "4.3.0",
     "lodash": "~2.4.1",
     "angular-socket-io": "~0.7.0",
     "PACE": "pace#~1.0.2",
@@ -135,6 +136,7 @@
     "angular-ui-select": "~0.8.3",
     "angular-ui-utils": "~0.2.1",
     "angular-xeditable": "~0.1.8",
+    "angular-ui-tree": "^2.16.0",
     "animate.css": "~3.2.0",
     "bootstrap": "4.0.0-alpha.2",
     "bootstrap-additions": "~0.3.1",
@@ -147,7 +149,6 @@
     "flot-spline": "*",
     "flot.orderbars": "*",
     "flot.tooltip": "~0.8.4",
-    "font-awesome": "4.3.0",
     "footable": "~2.0.3",
     "fullcalendar": "~2.4.0",
     "handlebars": "~4.0.3",

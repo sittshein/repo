@@ -26,6 +26,9 @@ module.exports = function(grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+    // flatkit settings 
+    // Added by Sitt Shein
+    bower: grunt.file.readJSON('bower.json'),
     // Project settings
     pkg: grunt.file.readJSON('package.json'),
     yeoman: {
@@ -89,7 +92,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
-        tasks: ['sass', 'postcss']
+        tasks: ['sass:server', 'postcss']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -116,6 +119,13 @@ module.exports = function(grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      // flatkit watch tasks
+      // added by sitt shein
+      fk_sass: {
+        files: ['<%= yeoman.client %>/assets/scss/*.scss'],
+        tasks: ['sass:assets']
+      },
+
     },
 
 
@@ -390,6 +400,11 @@ module.exports = function(grunt) {
         cwd: '<%= yeoman.client %>',
         dest: '.tmp/',
         src: ['app/app.constant.js']
+      },
+      // Flatkit copy task (dependicies files to libs filder)
+      // Added by Sitt Shein
+      fk_libs:{
+          files: '<%= bower.copy %>'
       }
     },
 
@@ -420,16 +435,19 @@ module.exports = function(grunt) {
       pre: [
         'injector:sass',
         'ngconstant',
-        'copy:constant'
+        'copy:constant',
+        'copy:fk_libs'
       ],
       server: [
         'ts:client',
         'copy:constant',
+        'copy:fk_libs',
         'sass',
       ],
       test: [
         'ts:client',
         'copy:constant',
+        'copy:fk_libs',
         'ts:client_test',
         'sass',
       ],
@@ -445,6 +463,7 @@ module.exports = function(grunt) {
       dist: [
         'ts:client',
         'copy:constant',
+        'copy:fk_libs',
         'sass',
         'imagemin'
       ]
@@ -584,6 +603,13 @@ module.exports = function(grunt) {
         files: {
           '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss'
         }
+      },
+      assets: {
+        files: [
+            {'assets/styles/app.css': ['assets/scss/app.scss']},
+            {'assets/styles/app.rtl.css': ['assets/scss/app.rtl.scss']},
+            {'assets/bootstrap-rtl/dist/bootstrap-rtl.css': ['assets/bootstrap-rtl/scss/bootstrap-rtl.scss']}
+        ]
       }
     },
 
@@ -811,6 +837,7 @@ module.exports = function(grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'copy:fk_libs',
     'babel:server',
     'cdnify',
     'cssmin',

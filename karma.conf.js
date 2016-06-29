@@ -48,6 +48,7 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/angular-ui-select/dist/select.js',
       'client/bower_components/angular-xeditable/dist/js/xeditable.js',
+      'client/bower_components/angular-ui-tree/dist/angular-ui-tree.js',
       'client/bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
       'client/bower_components/datatables/media/js/jquery.dataTables.js',
       'client/bower_components/dropzone/dist/min/dropzone.min.js',
