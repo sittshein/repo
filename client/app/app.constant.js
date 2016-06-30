@@ -1,7 +1,7 @@
 (function(angular, undefined) {
 'use strict';
 
-angular.module('meanFullstackApp.constants', [])
+angular.module('app.constants', [])
 
 .constant('appConfig', {userRoles:['guest','user','admin']})
 

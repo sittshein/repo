@@ -1,0 +1,13 @@
+<div class="padding">
+  <p>Summernote</p>
+
+  <h6>Basic {{vm.message}}</h6>
+  <p>Super Simple WYSIWYG Editor on Bootstrap 
+  <button type="button" class="btn btn-fw warn" ng-click="vm.airmodeControl()">AirMode</button>
+  </p>
+  <div class="box m-b-md">
+    <div ui-jp="summernote" ui-options="{{vm.options}}">
+      <span ui-include="'./api/editor.html'">
+    </div>
+  </div>
+</div>

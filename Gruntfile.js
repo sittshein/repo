@@ -69,10 +69,16 @@ module.exports = function(grunt) {
       },
       injectJS: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).ts',
+          '<%= yeoman.client %>/{app,components}/!(mall_management)/**/!(*.spec|*.mock).ts',
           '!<%= yeoman.client %>/app/app.js'
         ],
         tasks: ['injector:scripts']
+      },
+      injectJSRoute: {
+        files: [
+          '<%= yeoman.client %>/{app,components}/mall_management/**/!(*.spec|*.mock|*.controller).ts'
+        ],
+        tasks: ['injector:scriptsRoute']
       },
       injectCss: {
         files: ['<%= yeoman.client %>/{app,components}/**/*.css'],
@@ -308,7 +314,7 @@ module.exports = function(grunt) {
     // `server/config/environment/shared.js`
     ngconstant: {
       options: {
-        name: 'meanFullstackApp.constants',
+        name: 'app.constants',
         dest: '<%= yeoman.client %>/app/app.constant.js',
         deps: [],
         wrap: true,
@@ -327,7 +333,7 @@ module.exports = function(grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'meanFullstackApp',
+        module: 'app',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
@@ -638,9 +644,36 @@ module.exports = function(grunt) {
         files: {
           '<%= yeoman.client %>/index.html': [
                [
-                 '<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).ts',
+                 '<%= yeoman.client %>/{app,components}/!(mall_management)/**/!(*.spec|*.mock).ts',
                  '<%= yeoman.client %>/app/app.constant.js',
                  '!{.tmp,<%= yeoman.client %>}/app/app.{js,ts}'
+               ]
+            ]
+        }
+      },
+      scriptsRoute: {
+        options: {
+          transform: function(filePath) {
+            var yoClient = grunt.config.get('yeoman.client');
+            filePath = filePath.replace('/' + yoClient + '/', '');
+            filePath = filePath.replace('/.tmp/', '');
+            filePath = filePath.replace('.ts', '.js');
+            return '<script src="' + filePath + '"></script>';
+          },
+          sort: function(a, b) {
+            var module = /\.module\.(js|ts)$/;
+            var aMod = module.test(a);
+            var bMod = module.test(b);
+            // inject *.module.js first
+            return (aMod === bMod) ? 0 : (aMod ? -1 : 1);
+          },
+          starttag: '<!-- injector:jsroute -->',
+          endtag: '<!-- endinjector -->'
+        },
+        files: {
+          '<%= yeoman.client %>/index.html': [
+               [
+                 '<%= yeoman.client %>/{app,components}/mall_management/**/!(*.spec|*.mock).ts'
                ]
             ]
         }

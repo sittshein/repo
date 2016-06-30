@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('meanFullstackApp', [
-  'meanFullstackApp.constants',
+angular.module('app', [
+  'app.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',

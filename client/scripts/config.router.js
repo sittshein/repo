@@ -47,6 +47,11 @@
             })
 
             // custom routes
+            .state('app.mall_management', {
+              url: '/mall_management',
+              template: '<div ui-view></div>'
+            })
+
             .state('app.survey', {
               url: '/survey',
               template: '<div ui-view></div>'
